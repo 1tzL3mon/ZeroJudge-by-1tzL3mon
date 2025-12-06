@@ -30,10 +30,10 @@ while True:
         ls = []
         for i in data:
             ls.append(int(i))
-        ls.sort()
+        ls.sort() #.sort()是列表的由小到大的整理功能
         for i in ls:
-            print(i, end=" ")
-        print()
+            print(i, end=" ") #還沒有print出來
+        print() #此時才print出來
     except EOFError:
         break
 
