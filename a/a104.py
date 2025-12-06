@@ -32,8 +32,8 @@ while True:
             ls.append(int(i))
         ls.sort() #.sort()是列表的由小到大的整理功能
         for i in ls:
-            print(i, end=" ") #還沒有print出來
-        print() #此時才print出來
+            print(i, end=" ") #print加空格，不換行
+        print() #print純換行
     except EOFError:
         break
 
