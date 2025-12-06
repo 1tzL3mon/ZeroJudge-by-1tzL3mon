@@ -1,4 +1,4 @@
-while True:
+while True: #23行
     try:
         n = int(input())
     except:
@@ -21,3 +21,19 @@ while True:
         output += ' '
     output += i[n-1]
     print(output)
+
+#企鵝answer 13行
+while True:
+    try:
+        num = int(input())
+        data = input().split()
+        ls = []
+        for i in data:
+            ls.append(int(i))
+        ls.sort()
+        for i in ls:
+            print(i, end=" ")
+        print()
+    except EOFError:
+        break
+
