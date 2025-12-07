@@ -1,6 +1,6 @@
 T = int(input()) #Grok的答案 15行
 for _ in range(T):
-    num = input().strip()
+    num = input().strip() #.strip()可以移除開頭和結尾的空格
     product = 1
     has_zero = False
     for c in num: #c是各個num裡的數字
