@@ -14,7 +14,7 @@ for t in range(times):
     elif n == 2:
         halves = copy.deepcopy(setotwo) #copy.deepcopy()的複製不會使用同一個記憶體
         setotwo = []
-        for j in range(int(len(w)/2)):
+        for j in range(int(len(w)/2)): #setotwo亂掉,必須要用w
             setotwo.append(halves[j])
             setotwo.append(halves[int(len(w)/2)+j])
 for i in range(len(setotwo)):
@@ -40,5 +40,5 @@ for _ in range(n):
         for i in range(0, int(len(text)/2)):
             ls.append(text[i])
             ls.append(text[(int((len(text))/2))+i])
-    text = ls
+    text = ls #在ls都排序完後,才把text變為ls,這樣text就不會亂掉
 print("".join(text)) #把list變成string,且中間沒有空格
