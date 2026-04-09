@@ -8,7 +8,7 @@ while True:
         yh = (y**2) * h
         et = list()
         for i in ki:
-            if left <= 0: #append(0)找最大值時會被跳過
+            if left <= 0: #append(0)，這樣找最大值時就會自動跳過
                 et.append(0)
                 continue
             if i >= left:
