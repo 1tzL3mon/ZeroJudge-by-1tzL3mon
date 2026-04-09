@@ -1,5 +1,5 @@
 while True:
-    try:
+    try: 
         st, f = map(int, input().split())
         spo = list(map(int, input().split()))
         sm = 0
