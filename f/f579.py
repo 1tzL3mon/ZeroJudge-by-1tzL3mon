@@ -1,7 +1,7 @@
 itema, itemb = map(int, input().split())
 n = int(input())
 res = 0
-for i in range(n):
+for i in range(n): 
     d = {}
     dil = list(map(int, input().split()))
     for j in range(len(dil)-1): #跑完所有商品後再進入if句
