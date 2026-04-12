@@ -1,4 +1,4 @@
-n = int(input())
+n = int(input()) 
 nums = sorted(map(int, input().split()))
 print(*(nums)) #中間有空格的string，而不是有逗號的list
 fail_max = -1
