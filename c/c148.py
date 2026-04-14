@@ -11,21 +11,21 @@ def solve(width, height, start_x, goal_x, obstacles):
     vis = [[[INF] * 3 for _ in range(width)] for _ in range(height)] #創建一個裝著[INF, INF, INF]的height乘width的陣列
     q = deque() #準備一個「待處理名單」
     y = 0 
-    testx = start_x + dx[0] #向下
+    testx = start_x + dx[0] #開頭直走，在這裡是向下
     testy = y + dy[0] 
     if 0 <= testy < height and 0 <= testx < width and (testx, testy) not in obstacles: #沒有超過邊框,沒有碰到障礙物
-        vis[testy][testx][0] = 0 #走完第一步轉0個彎
-        q.append((testx, testy, 0, 0)) #方向向下, 轉0次
+        vis[testy][testx][0] = 0 #把vis的[x][y][方向]設為轉彎次數
+        q.append((testx, testy, 0, 0)) #把{x, y, 方向, 轉彎次數}儲存在q
         
-    for ndir in [1, 2]: #向右和向左
+    for ndir in [1, 2]: #開頭轉彎，在這裡是向右和向左
         testx = start_x + dx[ndir]
         testy = y + dy[ndir]
         if 0 <= testx < width and 0 <= testy < height and (testx, testy) not in obstacles: #沒有超過邊框,沒有碰到障礙物
-            vis[testy][testx][ndir] = 1  #走完第一步轉1個彎
-            q.append((testx, testy, ndir, 1)) #方向向左/右,轉1次
-    while q:
-        x, y, dir, turns = q.popleft() #左邊拿出,deque變回空的
-        testx = x + dx[dir]
+            vis[testy][testx][ndir] = 1
+            q.append((testx, testy, ndir, 1))
+    while q: #走到待處理名單裡沒有任何東西可走
+        x, y, dir, turns = q.popleft() #左邊拿出,deque少一組資料
+        testx = x + dx[dir] #直走
         testy = y + dy[dir]
         if 0 <= testx < width and 0 <= testy < height and (testx, testy) not in obstacles:
             if vis[testy][testx][dir] > turns:
@@ -41,7 +41,7 @@ def solve(width, height, start_x, goal_x, obstacles):
                 if vis[testy][testx][ndir] > turns + 1:
                     vis[testy][testx][ndir] = turns + 1
                     q.append((testx, testy, ndir, turns + 1))
-    ans = min(vis[height-1][goal_x])
+    ans = min(vis[height-1][goal_x]) #找
     return ans if ans < INF else -1
 
 while True:
