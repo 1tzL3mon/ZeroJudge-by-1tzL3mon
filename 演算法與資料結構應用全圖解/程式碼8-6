@@ -43,3 +43,26 @@ void erase(Node *v) {
 
 int main() {
     init();
+
+    vector<string> names = {"yamamoto",
+                            "watanabe",
+                            "ito",
+                            "takahashi",
+                            "suzuki",
+                            "sato"};
+
+    Node *watanabe;
+    for (int i = 0; i < (int)names.size(); ++i) {
+        Node* node = new Node(names[i]);
+
+        insert(node);
+
+        if (names[i] == "watanabe") watanabe = node;
+    }
+
+    cout << "before: ";
+    printList();
+    erase(watanabe);
+    cout << "after: ";
+    printList();
+}
