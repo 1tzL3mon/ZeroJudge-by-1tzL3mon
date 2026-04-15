@@ -19,6 +19,14 @@ void init() {
     nil->next = nil;
 }
 
+void printList() {
+    Node* cur = nil->next;
+    for (; cur != nil; cur = cur->next) {
+        cout << cur->name << " -> ";
+    }
+    cout << endl;
+}
+
 void insert(Node* v, Node* p = nil) {
     v->next = p->next;
     p->next->prev = v;
