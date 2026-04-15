@@ -1,7 +1,8 @@
+#使用二元搜尋法加速「數對和最適化問題」的全域搜尋解法
+#3-4 求數對和之最小值
 import bisect
 
 def solve():
-    # 讀取輸入
     try:
         n, k = map(int, input().split())
         a = list(map(int, input().split()))
@@ -35,4 +36,33 @@ def solve():
 
 if __name__ == "__main__":
     solve()
-  
+
+
+
+
+
+try:
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    b = list(map(int, input().split()))
+except:
+    exit()
+b.sort()
+min_value = float('inf')
+for x in a:
+    target = k - x #找b大於k-x的最小值
+    low = 0
+    high = len(b) - 1
+    best_idx = -1
+    while low <= high: #二分搜尋到都搜尋完為止
+        mid = (low + high) // 2
+        if b[mid] >= target:
+            best_idx = mid  
+            high = mid - 1 #下一次搜尋範圍就不用包含mid
+        else:
+            low = mid + 1
+    if best_idx != -1:
+        res = x + b[best_idx] #把a加回best_idx的b上
+        if res < min_value:
+            min_value = res
+print(min_value)
