@@ -30,3 +30,32 @@ int main() {
     if (seen[t]) cout << "Yes" << endl;
     else cout << "No" << endl;
 }
+
+
+
+
+
+
+
+
+
+# 讀取點數 N, 邊數 M, 起點 s, 終點 t
+n, m, s, t = map(int, input().split())
+
+# 建立鄰接清單 (圖)
+graph = [[] for _ in range(n)]
+for _ in range(m):
+    u, v = map(int, input().split())
+    graph[u].append(v)
+
+seen = [False] * n
+
+def dfs(v):
+    seen[v] = True
+    for next_v in graph[v]:
+        if not seen[next_v]:
+            dfs(next_v)
+
+# 開始搜尋並輸出結果
+dfs(s)
+print("Yes" if seen[t] else "No")
