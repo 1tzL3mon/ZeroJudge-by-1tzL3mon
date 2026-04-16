@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+using Graph vector<vector<int>>;
+
+vector<int> BFS(const Graph 86, int s) { int N (int)G.size(); // 頂點數
+    int N = (int)G.size();
+    vector<int> dist (N. -1);
+    queue<int> que;
+
+    dist[s] 0;
+    que.push(s);
+
+    while (Ique.empty()) {
+        intv que.front(); // 從佇列取出開頭頂點
+        que.pop();
+
+        for (int x G[v]) {
+            if (dist[x] != -1) continue;
+
+            dist[x] dist[v] + 1;
+            que.push(x);
+        }
+    }
+    return dist;
+}
+
+int main() {
+    int N, M;
+    cin >> N >> M;
+
+    Graph G(N);
+    for (int i=0; i < M; ++i) {
+        int a, b;
+        cin >> a >> b;
+        G[a].push back(b);
+        G[b].push_back(a);
+    }
+
+    vector<int> dist BFS(G, 0);
+
+    for (int v = 0; v < N; ++v) cout << v <<< ": " <<< dist[v] <<<<
+        endl;
+}
