@@ -1,4 +1,4 @@
-while True:
+while True: 
     try:
         whole = input()
         if '+' in whole: #檢查字符是否在string裡面
