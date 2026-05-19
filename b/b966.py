@@ -1,3 +1,8 @@
+☐☐☐☐☐◼☐☐☐☐
+☐◼☐☐☐☐☐☐☐☐
+☐☐☐☐◼◼◼◼☐☐
+☐☐☐☐☐☐☐◼◼☐
+
 #我的第一次嘗試，因為超出時間TLE而失敗
 n = int(input())
 allroute = []
@@ -29,6 +34,7 @@ print(answer)
 
 
 #Gemini寫的Answer
+
 n = int(input())
 allroute = []
 for i in range(n):
