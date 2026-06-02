@@ -1,4 +1,3 @@
-#Grok寫的,未完成
 from collections import deque
 
 INF = 10**9
