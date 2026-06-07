@@ -1,3 +1,5 @@
+# 細菌繁殖
+
 #我的第一次嘗試，因為超出時間而失敗 
 height, length, amount, time = map(int, input().split())
 plate = []
