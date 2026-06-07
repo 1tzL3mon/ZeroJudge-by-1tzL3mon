@@ -1,3 +1,43 @@
+# 字串操作
+
+#Gemini的解法
+# 讀取初始字串，並直接轉成字元列表方便操作
+s_list = list(input())
+k = int(input())
+operations = list(map(int, input().split()))
+n = len(s_list)
+for op in operations:
+    # 【操作 0】：兩兩交換 (例如：ab cd -> ba dc)
+    if op == 0:
+        for i in range(0, n, 2):
+            # 交換 i 和 i+1 的位置
+            temp = s_list[i]
+            s_list[i] = s_list[i+1]
+            s_list[i+1] = temp
+    # 【操作 1】：兩兩排序 (例如：ba dc -> ab cd)
+    elif op == 1:
+        for i in range(0, n, 2):
+            if s_list[i] > s_list[i+1]:
+                temp = s_list[i]
+                s_list[i] = s_list[i+1]
+                s_list[i+1] = temp
+    # 【操作 2】：完美重排 (前半段與後半段交錯組合)
+    elif op == 2:
+        half = n // 2
+        new_list = []
+        for i in range(half):
+            new_list.append(s_list[i])         # 放左半邊的第 i 個
+            new_list.append(s_list[half + i])  # 放右半邊的第 i 個
+        s_list = new_list
+print("".join(s_list))
+
+
+
+
+
+
+
+
 import copy #22行
 w = input()
 times = int(input())
