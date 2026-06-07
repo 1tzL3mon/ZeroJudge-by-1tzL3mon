@@ -1,3 +1,22 @@
+# 第一行n，代表接下來會有n行
+
+#Gemini的解法
+n = int(input())
+for _ in range(n):
+    line = input()
+    p_count = 0  # 記錄目前手上有幾個還沒配對的 'p'
+    pair_count = 0  # 記錄成功配對的總對數
+    for char in line:
+        if char == 'p':
+            p_count += 1  # 遇到 p，未配對的 p 增加一個
+        elif char == 'q':
+            if p_count > 0:  # 遇到 q，且前面有 p 可以配對
+                p_count -= 1  # 配對成功，扣掉一個 p
+                pair_count += 1 
+    print(pair_count)
+
+
+
 import sys
 
 def solve():
