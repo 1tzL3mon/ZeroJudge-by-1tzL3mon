@@ -1,3 +1,5 @@
+#裝飲料
+
 while True:
     try:
         a = int(input())
