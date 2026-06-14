@@ -1,6 +1,6 @@
 #第一行代表正確答案，第二行代表接下來會有幾行
 #對每次guess輸出有幾A幾B
-
+ 
 secret = input()
 n = int(input())
 for _ in range(n):
