@@ -13,3 +13,19 @@ for _ in range(T):
         print(0)
     else:
         print(product)
+
+
+
+
+#2026我的Answer
+while True:
+    try:
+        t = int(input())
+        for _ in range(t):
+            num = list(map(int, list(input())))
+            answer = 1
+            for i in num:
+                answer *= i
+            print(answer)
+    except:
+        break
